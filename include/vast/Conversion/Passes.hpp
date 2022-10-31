@@ -21,7 +21,10 @@ namespace vast
     #ifdef ENABLE_PDLL_CONVERSIONS
         constexpr bool enable_pdll_conversion_passes = true;
 
-        std::unique_ptr< mlir::Pass > createHLToFuncPass();
+        namespace pdll_impl
+        {
+            std::unique_ptr< mlir::Pass > createHLToFuncPass();
+        } // namespace pdll_impl
     #endif
 
     std::unique_ptr< mlir::Pass > createCoreToLLVMPass();
